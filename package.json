@@ -1,6 +1,6 @@
 {
     "name": "@itsprofcjs/cjs-rb",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "description": "Modern React UI components using bulma",
     "main": "dist/index.js",
     "module": "dist/index.esm.js",
