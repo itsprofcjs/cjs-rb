@@ -1,3 +1,11 @@
+# [1.2.0-beta.1](https://github.com/itsprofcjs/cjs-rb/compare/v1.1.0...v1.2.0-beta.1) (2020-09-01)
+
+
+### Features
+
+* **elements:** Support for Box, Notification, Tags, Buttons and ([c728952](https://github.com/itsprofcjs/cjs-rb/commit/c7289529a9e7bd32bcdec4fe214474eb90147cab))
+* **storybook:** View components in story book ([c1f1b96](https://github.com/itsprofcjs/cjs-rb/commit/c1f1b96c1a857555d8c39c80c5ab51f526afbe79))
+
 # [1.1.0](https://github.com/itsprofcjs/cjs-rb/compare/v1.0.0...v1.1.0) (2020-08-18)
 
 
