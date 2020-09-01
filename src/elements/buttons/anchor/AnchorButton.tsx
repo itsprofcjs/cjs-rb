@@ -1,10 +1,10 @@
 import React, { AnchorHTMLAttributes } from 'react';
 
-import { ButtonConfig, getButtonClass } from './helpers/buttonClass';
+import { ButtonConfig, getButtonClass } from '../helpers/buttonClass';
 
-interface Props extends ButtonConfig, AnchorHTMLAttributes<HTMLAnchorElement> {}
+export interface Props extends ButtonConfig, AnchorHTMLAttributes<HTMLAnchorElement> {}
 
-const AnchorButton = ({ isDelete, children, ...props }: Props) => {
+export const AnchorButton = ({ isDelete, children, ...props }: Props) => {
     const { className, restPayload } = getButtonClass({ isDelete, ...props });
 
     if (isDelete) {
@@ -17,5 +17,3 @@ const AnchorButton = ({ isDelete, children, ...props }: Props) => {
         );
     }
 };
-
-export default AnchorButton;

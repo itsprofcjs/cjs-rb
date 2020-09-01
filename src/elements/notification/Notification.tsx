@@ -1,14 +1,14 @@
 import React, { HTMLAttributes } from 'react';
 
 import { ColorClass, getColorClass } from '../utils/colorClass';
-import Button from '../button/Button';
+import { Button } from '../buttons/button/Button';
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
+export interface Props extends HTMLAttributes<HTMLDivElement> {
     isLight?: boolean;
     kind?: ColorClass;
 }
 
-const Notification = ({ children, className = '', isLight = false, kind = 'default' }: Props) => {
+export const Notification = ({ children, className = '', isLight = false, kind = 'default' }: Props) => {
     let clsName = 'notification ';
 
     const colorClass = getColorClass(kind, isLight);
@@ -26,5 +26,3 @@ const Notification = ({ children, className = '', isLight = false, kind = 'defau
         </section>
     );
 };
-
-export default Notification;

@@ -1,6 +1,6 @@
 import React, { ButtonHTMLAttributes } from 'react';
 
-import { ButtonConfig, getButtonClass } from './helpers/buttonClass';
+import { ButtonConfig, getButtonClass } from '../helpers/buttonClass';
 
 export interface Props extends ButtonConfig, ButtonHTMLAttributes<HTMLButtonElement> {}
 

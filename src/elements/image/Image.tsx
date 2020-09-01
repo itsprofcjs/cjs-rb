@@ -20,7 +20,7 @@ type Ratios =
     | '16by9'
     | 'default';
 
-interface Props extends ImgHTMLAttributes<HTMLImageElement> {
+export interface Props extends ImgHTMLAttributes<HTMLImageElement> {
     caption?: string;
     captionClass?: string;
     containerClass?: string;
@@ -71,7 +71,7 @@ const getRatioClass = (ratio: Ratios) => {
     }
 };
 
-const Image = ({
+export const Image = ({
     caption = '',
     captionClass = '',
     containerClass = '',
@@ -115,5 +115,3 @@ const Image = ({
         </figure>
     );
 };
-
-export default Image;

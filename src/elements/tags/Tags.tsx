@@ -2,9 +2,9 @@ import React, { HTMLAttributes } from 'react';
 
 import { TagsConfig, getTagsClass } from './helpers/tagsClass';
 
-interface Props extends TagsConfig, HTMLAttributes<Element> {}
+export interface Props extends TagsConfig, HTMLAttributes<Element> {}
 
-const Tags = ({ children, ...props }: Props) => {
+export const Tags = ({ children, ...props }: Props) => {
     const { className, restPayload } = getTagsClass({ ...props });
 
     return (
@@ -13,5 +13,3 @@ const Tags = ({ children, ...props }: Props) => {
         </section>
     );
 };
-
-export default Tags;

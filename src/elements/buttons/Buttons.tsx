@@ -2,9 +2,9 @@ import React, { HTMLAttributes } from 'react';
 
 import { ButtonsConfig, getButtonsClass } from './helpers/buttonsClass';
 
-interface Props extends ButtonsConfig, HTMLAttributes<Element> {}
+export interface Props extends ButtonsConfig, HTMLAttributes<Element> {}
 
-const Buttons = ({ children, ...props }: Props) => {
+export const Buttons = ({ children, ...props }: Props) => {
     const { className, restPayload } = getButtonsClass({ ...props });
 
     return (
@@ -13,5 +13,3 @@ const Buttons = ({ children, ...props }: Props) => {
         </section>
     );
 };
-
-export default Buttons;

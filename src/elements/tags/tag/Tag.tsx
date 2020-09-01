@@ -1,10 +1,10 @@
 import React, { HTMLAttributes } from 'react';
 
-import { TagClass, getTagClass } from './helpers/tagClass';
+import { TagClass, getTagClass } from '../helpers/tagClass';
 
-interface Props extends TagClass, HTMLAttributes<HTMLSpanElement> {}
+export interface Props extends TagClass, HTMLAttributes<HTMLSpanElement> {}
 
-const Tag = ({ children, isDelete, ...props }: Props) => {
+export const Tag = ({ children, isDelete, ...props }: Props) => {
     const { className, restPayload } = getTagClass({ isDelete, ...props });
 
     if (isDelete) {
@@ -17,5 +17,3 @@ const Tag = ({ children, isDelete, ...props }: Props) => {
         );
     }
 };
-
-export default Tag;
