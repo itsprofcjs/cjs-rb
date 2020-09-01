@@ -2,9 +2,9 @@ import React, { ButtonHTMLAttributes } from 'react';
 
 import { ButtonConfig, getButtonClass } from './helpers/buttonClass';
 
-interface Props extends ButtonConfig, ButtonHTMLAttributes<HTMLButtonElement> {}
+export interface Props extends ButtonConfig, ButtonHTMLAttributes<HTMLButtonElement> {}
 
-const Button = ({ isDelete, children, ...props }: Props) => {
+export const Button = ({ isDelete, children, ...props }: Props) => {
     const { className, restPayload } = getButtonClass({ isDelete, ...props });
 
     return (
@@ -13,5 +13,3 @@ const Button = ({ isDelete, children, ...props }: Props) => {
         </button>
     );
 };
-
-export { Button, Props };

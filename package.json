@@ -27,8 +27,8 @@
         "build": "rollup -c",
         "prepublish": "npm run build",
         "update": "ncu -u --timeout 180000 && npm i",
-        "storybook": "start-storybook -p 6006",
-        "build-storybook": "build-storybook"
+        "sb": "start-storybook -p 6006",
+        "build-sb": "build-storybook"
     },
     "devDependencies": {
         "@babel/core": "7.11.4",
