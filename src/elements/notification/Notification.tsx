@@ -1,14 +1,43 @@
-import React, { HTMLAttributes } from 'react';
+import React, { HTMLAttributes, MouseEventHandler, useState, useEffect, useCallback } from 'react';
 
 import { ColorClass, getColorClass } from '../utils/colorClass';
 import { Button } from '../buttons/button/Button';
 
 export interface Props extends HTMLAttributes<HTMLDivElement> {
+    /**
+     * Auto dismiss the notification after "dismissAfter" time has passed.
+     * If autoDismiss is set to "true" and "dismissAfter" is not passed,
+     * notification will dismiss after a default of 5sec
+     */
+    autoDismiss?: boolean;
+    /** Auto dismiss the notification after n sec (default: 5sec)
+     * For this to work you need to set "autoDismiss" to "true"
+     */
+    dismissAfter?: number;
+    /**
+     * Set true if you don't want to show close button (default: false)
+     */
+    hideClose?: boolean;
     isLight?: boolean;
+    /**
+     * Callback when close notification is clicked
+     */
+    onClose?: MouseEventHandler;
     kind?: ColorClass;
 }
 
-export const Notification = ({ children, className = '', isLight = false, kind = 'default' }: Props) => {
+export const Notification = ({
+    autoDismiss = false,
+    children,
+    className = '',
+    dismissAfter = 5,
+    hideClose = false,
+    isLight = false,
+    onClose = () => {},
+    kind = 'default',
+}: Props) => {
+    const [isVisible, setIsVisible] = useState(true);
+
     let clsName = 'notification ';
 
     const colorClass = getColorClass(kind, isLight);
@@ -19,10 +48,31 @@ export const Notification = ({ children, className = '', isLight = false, kind =
 
     clsName = clsName.trim();
 
-    return (
+    const onNotificationClose = useCallback((e) => {
+        setIsVisible(false);
+        onClose?.(e);
+    }, []);
+
+    useEffect(() => {
+        let timeoutId: NodeJS.Timeout;
+
+        if (autoDismiss) {
+            timeoutId = setTimeout(() => {
+                setIsVisible(false);
+            }, dismissAfter * 1000);
+        }
+
+        return () => {
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
+        };
+    }, [autoDismiss, dismissAfter]);
+
+    return isVisible ? (
         <section className={clsName}>
-            <Button isDelete />
+            {!hideClose && <Button isDelete onClick={onNotificationClose} />}
             {children}
         </section>
-    );
+    ) : null;
 };
