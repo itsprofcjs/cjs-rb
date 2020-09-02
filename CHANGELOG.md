@@ -1,3 +1,10 @@
+## [1.3.1-beta.1](https://github.com/itsprofcjs/cjs-rb/compare/v1.3.0...v1.3.1-beta.1) (2020-09-02)
+
+
+### Bug Fixes
+
+* **lib:** Support from ES6 ([054bb82](https://github.com/itsprofcjs/cjs-rb/commit/054bb82c53b42cad1d7d4a311390880caab66de7))
+
 # [1.3.0](https://github.com/itsprofcjs/cjs-rb/compare/v1.2.0...v1.3.0) (2020-09-02)
 
 
