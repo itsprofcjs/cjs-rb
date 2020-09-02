@@ -1,3 +1,10 @@
+# [1.2.0-beta.2](https://github.com/itsprofcjs/cjs-rb/compare/v1.2.0-beta.1...v1.2.0-beta.2) (2020-09-02)
+
+
+### Features
+
+* **docs:** Docs now available via storybook ([fe3b698](https://github.com/itsprofcjs/cjs-rb/commit/fe3b69891f91b88f0e00e80bf8e146dd8519de51))
+
 # [1.2.0-beta.1](https://github.com/itsprofcjs/cjs-rb/compare/v1.1.0...v1.2.0-beta.1) (2020-09-01)
 
 
