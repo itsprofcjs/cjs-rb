@@ -1,3 +1,10 @@
+# [1.3.0-beta.1](https://github.com/itsprofcjs/cjs-rb/compare/v1.2.0...v1.3.0-beta.1) (2020-09-02)
+
+
+### Features
+
+* **notification:** Auto hide, close(with callback) notification and ([cbab98f](https://github.com/itsprofcjs/cjs-rb/commit/cbab98f6dd8ce19c6090ae9f6f05828f700c11f3))
+
 # [1.2.0](https://github.com/itsprofcjs/cjs-rb/compare/v1.1.0...v1.2.0) (2020-09-02)
 
 
