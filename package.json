@@ -23,12 +23,12 @@
         "registry": "https://registry.npmjs.org/"
     },
     "scripts": {
-        "start": "rollup -c",
         "build": "rollup -c",
-        "prepublish": "rm -rf dist/ && npm run build && npm run build-sb",
-        "update": "ncu -u --timeout 180000 && npm i",
+        "build-sb": "build-storybook -o docs/",
+        "prepare": "rm -rf dist/ && npm run build && npm run build-sb",
         "sb": "start-storybook -p 6006",
-        "build-sb": "build-storybook -o docs/"
+        "start": "rollup -c",
+        "update": "ncu -u --timeout 180000 && npm i"
     },
     "devDependencies": {
         "@babel/core": "7.11.4",
