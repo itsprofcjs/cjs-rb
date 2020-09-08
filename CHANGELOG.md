@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/itsprofcjs/cjs-rb/compare/v1.3.1...v1.4.0) (2020-09-08)
+
+
+### Features
+
+* **components:** Message and Modal Components ([8934680](https://github.com/itsprofcjs/cjs-rb/commit/8934680ab65f9f1a7836a656e7c3bb56a22c8cd4))
+
 # [1.4.0-beta.1](https://github.com/itsprofcjs/cjs-rb/compare/v1.3.1...v1.4.0-beta.1) (2020-09-08)
 
 
