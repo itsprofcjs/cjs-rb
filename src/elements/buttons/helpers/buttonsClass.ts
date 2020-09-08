@@ -1,5 +1,5 @@
-import { SizeClass, getSizeClass } from '../../utils/sizeClass';
-import { AlignmentClass, getAlignmentClass } from '../../utils/alignmentClass';
+import { SizeClass, getSizeClass } from '../../../utils/sizeClass';
+import { AlignmentClass, getAlignmentClass } from '../../../utils/alignmentClass';
 
 /* 
 Buttons : These are container class for button elements

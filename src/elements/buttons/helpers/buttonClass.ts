@@ -1,5 +1,5 @@
-import { ColorClass, getColorClass } from '../../utils/colorClass';
-import { SizeClass, getSizeClass } from '../../utils/sizeClass';
+import { ColorClass, getColorClass } from '../../../utils/colorClass';
+import { SizeClass, getSizeClass } from '../../../utils/sizeClass';
 
 export interface ButtonConfig {
     className?: string;

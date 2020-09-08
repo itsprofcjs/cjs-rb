@@ -1,6 +1,6 @@
 import React, { HTMLAttributes, MouseEventHandler, useState, useEffect, useCallback } from 'react';
 
-import { ColorClass, getColorClass } from '../utils/colorClass';
+import { ColorClass, getColorClass } from '../../utils/colorClass';
 import { Button } from '../buttons/button/Button';
 
 export interface Props extends HTMLAttributes<HTMLDivElement> {
@@ -22,7 +22,7 @@ export interface Props extends HTMLAttributes<HTMLDivElement> {
     /**
      * Callback when close notification is clicked
      */
-    onClose?: MouseEventHandler;
+    onClose?: Function;
     kind?: ColorClass;
 }
 
