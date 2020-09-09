@@ -1,3 +1,10 @@
+# [1.5.0-beta.1](https://github.com/itsprofcjs/cjs-rb/compare/v1.4.0...v1.5.0-beta.1) (2020-09-09)
+
+
+### Features
+
+* **modal:** Card Modal now available ([5e12c05](https://github.com/itsprofcjs/cjs-rb/commit/5e12c05756a0ca37f5e8488729cbe8557970197c))
+
 # [1.4.0](https://github.com/itsprofcjs/cjs-rb/compare/v1.3.1...v1.4.0) (2020-09-08)
 
 
