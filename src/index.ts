@@ -12,4 +12,9 @@ import { Notification } from './elements/notification/Notification';
 import { Tag } from './elements/tags/tag/Tag';
 import { Tags } from './elements/tags/Tags';
 
-export { Box, Button, AnchorButton, FormButton, Buttons, Image, Notification, Tag, Tags };
+import { Message } from './components/message/Message';
+
+import { Modal } from './components/modal/Modal';
+import { CardModal } from './components/modal/card/CardModal';
+
+export { Box, Button, AnchorButton, FormButton, Buttons, Image, Notification, Tag, Tags, Message, Modal, CardModal };

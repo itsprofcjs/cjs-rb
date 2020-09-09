@@ -64,5 +64,3 @@ export const CardModal = ({
         </article>
     ) : null;
 };
-
-export default CardModal;
