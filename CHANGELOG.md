@@ -1,3 +1,15 @@
+# [1.6.0-beta.1](https://github.com/itsprofcjs/cjs-rb/compare/v1.5.0...v1.6.0-beta.1) (2020-09-13)
+
+
+### Bug Fixes
+
+* **helper:** Helper params fix ([1bf4ff6](https://github.com/itsprofcjs/cjs-rb/commit/1bf4ff6a7401a6e66d4e751d0afa874868972fb7))
+
+
+### Features
+
+* **ref:** Support of ref attribute for all the elements and components ([3566e2c](https://github.com/itsprofcjs/cjs-rb/commit/3566e2c319d52f716cf0fd825b4b26e732ee29e9))
+
 # [1.5.0](https://github.com/itsprofcjs/cjs-rb/compare/v1.4.0...v1.5.0) (2020-09-09)
 
 
