@@ -23,12 +23,12 @@ export const getTagClass = ({
 }: TagClass) => {
     let name = prefix + ' ';
 
-    const sizeClass = getSizeClass(scale);
+    const sizeClass = getSizeClass(false, scale);
 
     if (isDelete) {
         name += 'is-delete ' + sizeClass;
     } else {
-        const colorClass = getColorClass(kind, isLight);
+        const colorClass = getColorClass(isLight, kind);
 
         name += colorClass;
 

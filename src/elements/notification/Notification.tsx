@@ -39,7 +39,7 @@ export const Notification = ({
 }: Props) => {
     let clsName = 'notification ';
 
-    const colorClass = getColorClass(kind, isLight);
+    const colorClass = getColorClass(isLight, kind);
 
     const [isVisible, setIsVisible] = useState(true);
 

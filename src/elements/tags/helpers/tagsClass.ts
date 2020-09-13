@@ -18,7 +18,7 @@ export const getTagsClass = ({
 }: TagsConfig) => {
     let name = prefix + ' ';
 
-    name += getSizeClass(scale, true);
+    name += getSizeClass(true, scale);
 
     if (hasAddons) {
         name += 'has-addons ';

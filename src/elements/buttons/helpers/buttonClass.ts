@@ -41,14 +41,14 @@ export const getButtonClass = ({
 }: ButtonConfig) => {
     let name = '';
 
-    const sizeClass = getSizeClass(scale);
+    const sizeClass = getSizeClass(false, scale);
 
     if (isDelete) {
         name = 'delete ' + sizeClass;
     } else {
         name = prefix + ' ';
 
-        const colorClass = getColorClass(kind, isLight);
+        const colorClass = getColorClass(isLight, kind);
 
         name += colorClass;
 

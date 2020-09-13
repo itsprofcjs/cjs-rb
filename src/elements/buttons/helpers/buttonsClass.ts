@@ -21,7 +21,7 @@ export const getButtonsClass = ({
 }: ButtonsConfig) => {
     let name = prefix + ' ';
 
-    name += getSizeClass(scale, true);
+    name += getSizeClass(true, scale);
 
     name += getAlignmentClass(alignment);
 
