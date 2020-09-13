@@ -1,3 +1,10 @@
+# [1.6.0-beta.2](https://github.com/itsprofcjs/cjs-rb/compare/v1.6.0-beta.1...v1.6.0-beta.2) (2020-09-13)
+
+
+### Bug Fixes
+
+* **docs:** Updated docs ([a68224a](https://github.com/itsprofcjs/cjs-rb/commit/a68224a64545b85cbbdd2fd15cd45ea1aa715cfa))
+
 # [1.6.0-beta.1](https://github.com/itsprofcjs/cjs-rb/compare/v1.5.0...v1.6.0-beta.1) (2020-09-13)
 
 

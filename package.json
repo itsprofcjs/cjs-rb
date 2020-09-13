@@ -1,6 +1,6 @@
 {
     "name": "cjs-rb",
-    "version": "1.6.0-beta.1",
+    "version": "1.6.0-beta.2",
     "description": "Modern React UI components using bulma",
     "main": "dist/index.js",
     "module": "dist/index.esm.js",
