@@ -1,9 +1,9 @@
-import React, { ClassAttributes, HTMLAttributes, ReactNode, useCallback, useState } from 'react';
+import React, { forwardRef, HTMLAttributes, ReactNode, Ref, useCallback, useState } from 'react';
 
 import { getColorClass, ColorClass } from '../../utils/colorClass';
 import { getSizeClass, SizeClass } from '../../utils/sizeClass';
 
-export interface Props extends ClassAttributes<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
+export interface Props extends HTMLAttributes<HTMLDivElement> {
     headerContent?: ReactNode;
     isLight?: boolean;
     kind?: ColorClass;
@@ -15,17 +15,20 @@ export interface Props extends ClassAttributes<HTMLDivElement>, HTMLAttributes<H
     scale?: SizeClass;
 }
 
-export const Message = ({
-    children,
-    className = '',
-    headerContent = '',
-    isLight = false,
-    kind = 'default',
-    noHeader = false,
-    onClose = () => {},
-    scale = 'default',
-    ...props
-}: Props) => {
+export const MessageElement = (
+    {
+        children,
+        className = '',
+        headerContent = '',
+        isLight = false,
+        kind = 'default',
+        noHeader = false,
+        onClose = () => {},
+        scale = 'default',
+        ...props
+    }: Props,
+    ref: Ref<HTMLElement>
+) => {
     let clsName = 'message ';
 
     const [isVisible, setIsVisible] = useState(true);
@@ -44,7 +47,7 @@ export const Message = ({
     clsName = clsName.trim();
 
     return isVisible ? (
-        <article className={clsName} {...props}>
+        <article className={clsName} ref={ref} {...props}>
             {!noHeader && (
                 <section className="message-header">
                     <p>{headerContent}</p>
@@ -55,3 +58,5 @@ export const Message = ({
         </article>
     ) : null;
 };
+
+export const Message = forwardRef(MessageElement);

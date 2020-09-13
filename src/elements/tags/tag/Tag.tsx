@@ -1,10 +1,10 @@
-import React, { ClassAttributes, HTMLAttributes } from 'react';
+import React, { forwardRef, HTMLAttributes, Ref } from 'react';
 
 import { getTagClass, TagClass } from '../helpers/tagClass';
 
-export interface Props extends ClassAttributes<HTMLSpanElement>, HTMLAttributes<HTMLSpanElement>, TagClass {}
+export interface Props extends HTMLAttributes<HTMLSpanElement>, TagClass {}
 
-export const Tag = ({ children, isDelete, ref, ...props }: Props) => {
+export const TagElement = ({ children, isDelete, ...props }: Props, ref: Ref<HTMLSpanElement>) => {
     const { className, restPayload } = getTagClass({ isDelete, ...props });
 
     if (isDelete) {
@@ -17,3 +17,5 @@ export const Tag = ({ children, isDelete, ref, ...props }: Props) => {
         );
     }
 };
+
+export const Tag = forwardRef(TagElement);

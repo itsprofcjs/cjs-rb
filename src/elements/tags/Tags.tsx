@@ -1,10 +1,10 @@
-import React, { ClassAttributes, HTMLAttributes } from 'react';
+import React, { forwardRef, HTMLAttributes, Ref } from 'react';
 
 import { getTagsClass, TagsConfig } from './helpers/tagsClass';
 
-export interface Props extends ClassAttributes<HTMLElement>, HTMLAttributes<Element>, TagsConfig {}
+export interface Props extends HTMLAttributes<Element>, TagsConfig {}
 
-export const Tags = ({ children, ref, ...props }: Props) => {
+export const TagsElement = ({ children, ...props }: Props, ref: Ref<HTMLDivElement>) => {
     const { className, restPayload } = getTagsClass({ ...props });
 
     return (
@@ -13,3 +13,5 @@ export const Tags = ({ children, ref, ...props }: Props) => {
         </section>
     );
 };
+
+export const Tags = forwardRef(TagsElement);

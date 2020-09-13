@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, useState, useCallback } from 'react';
+import React, { HTMLAttributes, useState, useCallback, Ref, forwardRef } from 'react';
 
 import { Button } from '../../elements/buttons/button/Button';
 
@@ -8,7 +8,10 @@ export interface Props extends HTMLAttributes<HTMLDivElement> {
     onClose: Function;
 }
 
-export const Modal = ({ children, className = '', isActive = false, isClipped = false, onClose, ...props }: Props) => {
+export const ModalElement = (
+    { children, className = '', isActive = false, isClipped = false, onClose, ...props }: Props,
+    ref: Ref<HTMLDivElement>
+) => {
     let clsName = 'modal';
 
     const [isVisible, setIsVisible] = useState(true);
@@ -29,7 +32,7 @@ export const Modal = ({ children, className = '', isActive = false, isClipped = 
     clsName += ' ' + className;
 
     return isVisible ? (
-        <article className={clsName} {...props}>
+        <article className={clsName} ref={ref} {...props}>
             <section className="modal-background"></section>
             <section className="modal-content">{children}</section>
 
@@ -37,3 +40,5 @@ export const Modal = ({ children, className = '', isActive = false, isClipped = 
         </article>
     ) : null;
 };
+
+export const Modal = forwardRef(ModalElement);

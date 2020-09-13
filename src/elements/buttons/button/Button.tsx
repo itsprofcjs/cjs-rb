@@ -1,13 +1,10 @@
-import React, { ButtonHTMLAttributes, ClassAttributes } from 'react';
+import React, { ButtonHTMLAttributes, forwardRef, Ref } from 'react';
 
 import { ButtonConfig, getButtonClass } from '../helpers/buttonClass';
 
-export interface Props
-    extends ButtonConfig,
-        ButtonHTMLAttributes<HTMLButtonElement>,
-        ClassAttributes<HTMLButtonElement> {}
+export interface Props extends ButtonConfig, ButtonHTMLAttributes<HTMLButtonElement> {}
 
-export const Button = ({ children, isDelete, ref, ...props }: Props) => {
+export const ButtonElement = ({ children, isDelete, ...props }: Props, ref: Ref<HTMLButtonElement>) => {
     const { className, restPayload } = getButtonClass({ isDelete, ...props });
 
     return (
@@ -16,3 +13,5 @@ export const Button = ({ children, isDelete, ref, ...props }: Props) => {
         </button>
     );
 };
+
+export const Button = forwardRef(ButtonElement);

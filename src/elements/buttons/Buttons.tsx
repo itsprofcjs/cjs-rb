@@ -1,10 +1,10 @@
-import React, { ClassAttributes, HTMLAttributes } from 'react';
+import React, { forwardRef, HTMLAttributes, Ref } from 'react';
 
 import { ButtonsConfig, getButtonsClass } from './helpers/buttonsClass';
 
-export interface Props extends ButtonsConfig, ClassAttributes<HTMLElement>, HTMLAttributes<HTMLElement> {}
+export interface Props extends ButtonsConfig, HTMLAttributes<HTMLDivElement> {}
 
-export const Buttons = ({ children, ref, ...props }: Props) => {
+export const ButtonsElement = ({ children, ...props }: Props, ref: Ref<HTMLDivElement>) => {
     const { className, restPayload } = getButtonsClass({ ...props });
 
     return (
@@ -13,3 +13,5 @@ export const Buttons = ({ children, ref, ...props }: Props) => {
         </section>
     );
 };
+
+export const Buttons = forwardRef(ButtonsElement);

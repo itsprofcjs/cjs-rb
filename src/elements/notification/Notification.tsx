@@ -1,10 +1,10 @@
-import React, { ClassAttributes, HTMLAttributes, useCallback, useState, useEffect } from 'react';
+import React, { HTMLAttributes, useCallback, useState, useEffect, Ref, forwardRef } from 'react';
 
 import { getColorClass, ColorClass } from '../../utils/colorClass';
 
 import { Button } from '../buttons/button/Button';
 
-export interface Props extends ClassAttributes<HTMLElement>, HTMLAttributes<HTMLDivElement> {
+export interface Props extends HTMLAttributes<HTMLDivElement> {
     /**
      * Auto dismiss the notification after "dismissAfter" time has passed.
      * If autoDismiss is set to "true" and "dismissAfter" is not passed,
@@ -27,17 +27,19 @@ export interface Props extends ClassAttributes<HTMLElement>, HTMLAttributes<HTML
     kind?: ColorClass;
 }
 
-export const Notification = ({
-    autoDismiss = false,
-    children,
-    className = '',
-    dismissAfter = 5,
-    hideClose = false,
-    isLight = false,
-    onClose = () => {},
-    kind = 'default',
-    ref,
-}: Props) => {
+export const NotificationElement = (
+    {
+        autoDismiss = false,
+        children,
+        className = '',
+        dismissAfter = 5,
+        hideClose = false,
+        isLight = false,
+        onClose = () => {},
+        kind = 'default',
+    }: Props,
+    ref: Ref<HTMLDivElement>
+) => {
     let clsName = 'notification ';
 
     const colorClass = getColorClass(isLight, kind);
@@ -78,3 +80,5 @@ export const Notification = ({
         </section>
     ) : null;
 };
+
+export const Notification = forwardRef(NotificationElement);

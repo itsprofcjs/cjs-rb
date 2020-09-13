@@ -1,4 +1,4 @@
-import React, { ClassAttributes, ImgHTMLAttributes } from 'react';
+import React, { forwardRef, ImgHTMLAttributes, Ref } from 'react';
 
 type Dimensions = '16' | '24' | '32' | '48' | '64' | '96' | '128' | 'default';
 
@@ -20,7 +20,7 @@ type Ratios =
     | '16by9'
     | 'default';
 
-export interface Props extends ClassAttributes<HTMLImageElement>, ImgHTMLAttributes<HTMLImageElement> {
+export interface Props extends ImgHTMLAttributes<HTMLImageElement> {
     caption?: string;
     captionClass?: string;
     containerClass?: string;
@@ -71,20 +71,22 @@ const getRatioClass = (ratio: Ratios) => {
     }
 };
 
-export const Image = ({
-    caption = '',
-    captionClass = '',
-    className = '',
-    containerClass = '',
-    dimension = 'default',
-    isFullwidth = false,
-    isRounded = false,
-    isSquare = false,
-    ratio = 'default',
-    ref,
-    src = '',
-    ...imageProps
-}: Props) => {
+export const ImageElement = (
+    {
+        caption = '',
+        captionClass = '',
+        className = '',
+        containerClass = '',
+        dimension = 'default',
+        isFullwidth = false,
+        isRounded = false,
+        isSquare = false,
+        ratio = 'default',
+        src = '',
+        ...imageProps
+    }: Props,
+    ref: Ref<HTMLImageElement>
+) => {
     let figureClass = 'image ';
     let imageClass = '';
 
@@ -116,3 +118,5 @@ export const Image = ({
         </figure>
     );
 };
+
+export const Image = forwardRef(ImageElement);

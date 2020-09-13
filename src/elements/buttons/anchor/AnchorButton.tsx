@@ -1,13 +1,10 @@
-import React, { AnchorHTMLAttributes, ClassAttributes } from 'react';
+import React, { AnchorHTMLAttributes, forwardRef, Ref } from 'react';
 
 import { getButtonClass, ButtonConfig } from '../helpers/buttonClass';
 
-export interface Props
-    extends AnchorHTMLAttributes<HTMLAnchorElement>,
-        ButtonConfig,
-        ClassAttributes<HTMLAnchorElement> {}
+export interface Props extends AnchorHTMLAttributes<HTMLAnchorElement>, ButtonConfig {}
 
-export const AnchorButton = ({ children, isDelete, ref, ...props }: Props) => {
+export const AnchorButtonElement = ({ children, isDelete, ...props }: Props, ref: Ref<HTMLAnchorElement>) => {
     const { className, restPayload } = getButtonClass({ isDelete, ...props });
 
     if (isDelete) {
@@ -20,3 +17,5 @@ export const AnchorButton = ({ children, isDelete, ref, ...props }: Props) => {
         );
     }
 };
+
+export const AnchorButton = forwardRef(AnchorButtonElement);

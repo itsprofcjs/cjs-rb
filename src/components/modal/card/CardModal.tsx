@@ -1,4 +1,4 @@
-import React, { ClassAttributes, HTMLAttributes, ReactNode, useCallback, useState } from 'react';
+import React, { ClassAttributes, forwardRef, HTMLAttributes, ReactNode, Ref, useCallback, useState } from 'react';
 
 import { Button } from '../../../elements/buttons/button/Button';
 
@@ -20,20 +20,28 @@ export interface Props extends ClassAttributes<HTMLDivElement>, HTMLAttributes<H
     onClose: Function;
 }
 
-export const CardModal = ({
-    children,
-    className = '',
-    footerContent,
-    hasFooter = true,
-    isActive = false,
-    isClipped = false,
-    modalTitle = '',
-    onClose,
-    ...props
-}: Props) => {
+export const CardModalElement = (
+    {
+        children,
+        className = '',
+        footerContent,
+        hasFooter = true,
+        isActive = false,
+        isClipped = false,
+        modalTitle = '',
+        onClose,
+        ...props
+    }: Props,
+    ref: Ref<HTMLDivElement>
+) => {
     let clsName = 'modal';
 
     const [isVisible, setIsVisible] = useState(true);
+
+    const onCardModalClose = useCallback((e) => {
+        setIsVisible(false);
+        onClose?.(e);
+    }, []);
 
     if (isActive) {
         clsName += ' is-active ';
@@ -45,13 +53,8 @@ export const CardModal = ({
 
     clsName += ' ' + className;
 
-    const onCardModalClose = useCallback((e) => {
-        setIsVisible(false);
-        onClose?.(e);
-    }, []);
-
     return isVisible ? (
-        <article className={clsName} {...props}>
+        <article className={clsName} ref={ref} {...props}>
             <section className="modal-background"></section>
             <section className="modal-card">
                 <header className="modal-card-head">
@@ -64,3 +67,5 @@ export const CardModal = ({
         </article>
     ) : null;
 };
+
+export const CardModal = forwardRef(CardModalElement);
