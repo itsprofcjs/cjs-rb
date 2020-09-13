@@ -1,24 +1,24 @@
 import React from 'react';
 
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Meta, Story } from '@storybook/react/types-6-0';
 
-import { Button, Props } from './Button';
+import { Props, Button } from './Button';
 
 export default {
-    title: 'Button',
     component: Button,
+    title: 'Button',
 } as Meta;
 
 const Template: Story<Props> = (args) => <Button {...args}> CJS ! </Button>;
-
-export const Primary = Template.bind({});
-
-Primary.args = {
-    kind: 'primary',
-};
 
 export const Info = Template.bind({});
 
 Info.args = {
     kind: 'info',
+};
+
+export const Primary = Template.bind({});
+
+Primary.args = {
+    kind: 'primary',
 };

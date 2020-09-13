@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Meta, Story } from '@storybook/react/types-6-0';
 
-import { Tags, Props } from './Tags';
+import { Props, Tags } from './Tags';
 import { Tag } from './tag/Tag';
 
 export default {
-    title: 'Tags',
     component: Tags,
+    title: 'Tags',
 } as Meta;
 
 const Template: Story<Props> = (args) => (

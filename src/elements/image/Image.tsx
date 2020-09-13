@@ -1,4 +1,4 @@
-import React, { ImgHTMLAttributes } from 'react';
+import React, { ClassAttributes, ImgHTMLAttributes } from 'react';
 
 type Dimensions = '16' | '24' | '32' | '48' | '64' | '96' | '128' | 'default';
 
@@ -20,7 +20,7 @@ type Ratios =
     | '16by9'
     | 'default';
 
-export interface Props extends ImgHTMLAttributes<HTMLImageElement> {
+export interface Props extends ClassAttributes<HTMLImageElement>, ImgHTMLAttributes<HTMLImageElement> {
     caption?: string;
     captionClass?: string;
     containerClass?: string;
@@ -74,18 +74,18 @@ const getRatioClass = (ratio: Ratios) => {
 export const Image = ({
     caption = '',
     captionClass = '',
+    className = '',
     containerClass = '',
     dimension = 'default',
     isFullwidth = false,
     isRounded = false,
     isSquare = false,
     ratio = 'default',
-    className = '',
     src = '',
     ...imageProps
 }: Props) => {
-    let imageClass = '';
     let figureClass = 'image ';
+    let imageClass = '';
 
     figureClass += getRatioClass(ratio);
 
@@ -110,7 +110,7 @@ export const Image = ({
 
     return (
         <figure className={figureClass}>
-            <img className={imageClass} src={src} alt="" {...imageProps} />
+            <img alt="" className={imageClass} src={src} {...imageProps} />
             {caption && <figcaption className={captionClass}>{caption}</figcaption>}
         </figure>
     );

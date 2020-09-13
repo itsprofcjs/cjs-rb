@@ -1,9 +1,10 @@
-import React, { HTMLAttributes, MouseEventHandler, useState, useEffect, useCallback } from 'react';
+import React, { ClassAttributes, HTMLAttributes, useCallback, useState, useEffect } from 'react';
 
-import { ColorClass, getColorClass } from '../../utils/colorClass';
+import { getColorClass, ColorClass } from '../../utils/colorClass';
+
 import { Button } from '../buttons/button/Button';
 
-export interface Props extends HTMLAttributes<HTMLDivElement> {
+export interface Props extends ClassAttributes<HTMLElement>, HTMLAttributes<HTMLDivElement> {
     /**
      * Auto dismiss the notification after "dismissAfter" time has passed.
      * If autoDismiss is set to "true" and "dismissAfter" is not passed,
@@ -36,11 +37,11 @@ export const Notification = ({
     onClose = () => {},
     kind = 'default',
 }: Props) => {
-    const [isVisible, setIsVisible] = useState(true);
-
     let clsName = 'notification ';
 
     const colorClass = getColorClass(kind, isLight);
+
+    const [isVisible, setIsVisible] = useState(true);
 
     clsName += colorClass;
 

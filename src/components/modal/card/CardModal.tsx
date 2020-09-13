@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, ReactNode, useState, useCallback } from 'react';
+import React, { ClassAttributes, HTMLAttributes, ReactNode, useCallback, useState } from 'react';
 
 import { Button } from '../../../elements/buttons/button/Button';
 
@@ -11,13 +11,13 @@ export const demoFooter: ReactNode = (
     </>
 );
 
-export interface Props extends HTMLAttributes<HTMLDivElement> {
+export interface Props extends ClassAttributes<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
     footerContent: ReactNode;
     hasFooter?: boolean;
     isActive?: boolean;
     isClipped?: boolean;
-    onClose: Function;
     modalTitle?: ReactNode;
+    onClose: Function;
 }
 
 export const CardModal = ({
@@ -31,9 +31,9 @@ export const CardModal = ({
     onClose,
     ...props
 }: Props) => {
-    const [isVisible, setIsVisible] = useState(true);
-
     let clsName = 'modal';
+
+    const [isVisible, setIsVisible] = useState(true);
 
     if (isActive) {
         clsName += ' is-active ';

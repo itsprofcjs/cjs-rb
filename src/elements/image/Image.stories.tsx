@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Meta, Story } from '@storybook/react/types-6-0';
 
-import { Image, Props } from './Image';
+import { Props, Image } from './Image';
 
 export default {
-    title: 'Image',
     component: Image,
+    title: 'Image',
 } as Meta;
 
 const Template: Story<Props> = (args) => (

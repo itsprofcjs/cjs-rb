@@ -1,9 +1,9 @@
-import React, { HTMLAttributes, ReactNode, MouseEventHandler, useCallback, useState } from 'react';
+import React, { ClassAttributes, HTMLAttributes, ReactNode, useCallback, useState } from 'react';
 
-import { ColorClass, getColorClass } from '../../utils/colorClass';
-import { SizeClass, getSizeClass } from '../../utils/sizeClass';
+import { getColorClass, ColorClass } from '../../utils/colorClass';
+import { getSizeClass, SizeClass } from '../../utils/sizeClass';
 
-export interface Props extends HTMLAttributes<HTMLDivElement> {
+export interface Props extends ClassAttributes<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
     headerContent?: ReactNode;
     isLight?: boolean;
     kind?: ColorClass;
@@ -26,22 +26,22 @@ export const Message = ({
     scale = 'default',
     ...props
 }: Props) => {
-    const [isVisible, setIsVisible] = useState(true);
-
     let clsName = 'message ';
 
-    clsName += getColorClass(kind, isLight);
-
-    clsName += getSizeClass(scale);
-
-    clsName += ' ' + className;
-
-    clsName = clsName.trim();
+    const [isVisible, setIsVisible] = useState(true);
 
     const onMessageClose = useCallback((e) => {
         setIsVisible(false);
         onClose?.(e);
     }, []);
+
+    clsName += getColorClass(isLight, kind);
+
+    clsName += getSizeClass(false, scale);
+
+    clsName += ' ' + className;
+
+    clsName = clsName.trim();
 
     return isVisible ? (
         <article className={clsName} {...props}>

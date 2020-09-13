@@ -1,5 +1,5 @@
-import { ColorClass, getColorClass } from '../../../utils/colorClass';
-import { SizeClass, getSizeClass } from '../../../utils/sizeClass';
+import { getColorClass, ColorClass } from '../../../utils/colorClass';
+import { getSizeClass, SizeClass } from '../../../utils/sizeClass';
 
 export interface TagClass {
     className?: string;

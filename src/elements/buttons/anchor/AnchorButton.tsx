@@ -1,10 +1,13 @@
-import React, { AnchorHTMLAttributes } from 'react';
+import React, { AnchorHTMLAttributes, ClassAttributes } from 'react';
 
-import { ButtonConfig, getButtonClass } from '../helpers/buttonClass';
+import { getButtonClass, ButtonConfig } from '../helpers/buttonClass';
 
-export interface Props extends ButtonConfig, AnchorHTMLAttributes<HTMLAnchorElement> {}
+export interface Props
+    extends AnchorHTMLAttributes<HTMLAnchorElement>,
+        ButtonConfig,
+        ClassAttributes<HTMLAnchorElement> {}
 
-export const AnchorButton = ({ isDelete, children, ...props }: Props) => {
+export const AnchorButton = ({ children, isDelete, ...props }: Props) => {
     const { className, restPayload } = getButtonClass({ isDelete, ...props });
 
     if (isDelete) {

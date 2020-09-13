@@ -1,10 +1,13 @@
-import React, { ButtonHTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes, ClassAttributes } from 'react';
 
 import { ButtonConfig, getButtonClass } from '../helpers/buttonClass';
 
-export interface Props extends ButtonConfig, ButtonHTMLAttributes<HTMLButtonElement> {}
+export interface Props
+    extends ButtonConfig,
+        ButtonHTMLAttributes<HTMLButtonElement>,
+        ClassAttributes<HTMLButtonElement> {}
 
-export const Button = ({ isDelete, children, ...props }: Props) => {
+export const Button = ({ children, isDelete, ...props }: Props) => {
     const { className, restPayload } = getButtonClass({ isDelete, ...props });
 
     return (

@@ -1,8 +1,8 @@
-import React, { HTMLAttributes } from 'react';
+import React, { ClassAttributes, HTMLAttributes } from 'react';
 
 import { ButtonsConfig, getButtonsClass } from './helpers/buttonsClass';
 
-export interface Props extends ButtonsConfig, HTMLAttributes<Element> {}
+export interface Props extends ButtonsConfig, ClassAttributes<HTMLElement>, HTMLAttributes<HTMLElement> {}
 
 export const Buttons = ({ children, ...props }: Props) => {
     const { className, restPayload } = getButtonsClass({ ...props });

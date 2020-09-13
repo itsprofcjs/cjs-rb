@@ -9,9 +9,14 @@ export interface Props extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const Modal = ({ children, className = '', isActive = false, isClipped = false, onClose, ...props }: Props) => {
+    let clsName = 'modal';
+
     const [isVisible, setIsVisible] = useState(true);
 
-    let clsName = 'modal';
+    const onModalClose = useCallback((e) => {
+        setIsVisible(false);
+        onClose?.(e);
+    }, []);
 
     if (isActive) {
         clsName += ' is-active ';
@@ -23,17 +28,12 @@ export const Modal = ({ children, className = '', isActive = false, isClipped = 
 
     clsName += ' ' + className;
 
-    const onModalClose = useCallback((e) => {
-        setIsVisible(false);
-        onClose?.(e);
-    }, []);
-
     return isVisible ? (
         <article className={clsName} {...props}>
             <section className="modal-background"></section>
             <section className="modal-content">{children}</section>
 
-            <Button aria-label="close" prefix="modal-close" onClick={onModalClose} scale="large"></Button>
+            <Button aria-label="close" onClick={onModalClose} prefix="modal-close" scale="large"></Button>
         </article>
     ) : null;
 };

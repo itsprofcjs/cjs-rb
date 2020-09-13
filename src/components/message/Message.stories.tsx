@@ -1,17 +1,17 @@
 import React from 'react';
 
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Meta, Story } from '@storybook/react/types-6-0';
 
 import { Message, Props } from './Message';
 
 export default {
-    title: 'Message',
     component: Message,
     parameters: {
         actions: {
             handles: ['click Button'],
         },
     },
+    title: 'Message',
 } as Meta;
 
 const Template: Story<Props> = (args) => (
@@ -20,15 +20,15 @@ const Template: Story<Props> = (args) => (
     </Message>
 );
 
-export const Primary = Template.bind({});
-
-Primary.args = {
-    kind: 'primary',
-};
-
 export const NoHeader = Template.bind({});
 
 NoHeader.args = {
     kind: 'danger',
     noHeader: true,
+};
+
+export const Primary = Template.bind({});
+
+Primary.args = {
+    kind: 'primary',
 };

@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Meta, Story } from '@storybook/react/types-6-0';
 
-import { Tag, Props } from './Tag';
+import { Props, Tag } from './Tag';
 
 export default {
-    title: 'Tag',
     component: Tag,
+    title: 'Tag',
 } as Meta;
 
 const Template: Story<Props> = (args) => <Tag {...args}> info </Tag>;
@@ -20,6 +20,6 @@ Primary.args = {
 export const Rounded = Template.bind({});
 
 Rounded.args = {
-    kind: 'danger',
     isRounded: true,
+    kind: 'danger',
 };

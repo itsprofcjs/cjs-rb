@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Meta, Story } from '@storybook/react/types-6-0';
 
 import { Buttons, Props } from './Buttons';
 import { Button } from './button/Button';
 
 export default {
-    title: 'Buttons',
     component: Buttons,
+    title: 'Buttons',
 } as Meta;
 
 const Template: Story<Props> = (args) => (
@@ -18,14 +18,14 @@ const Template: Story<Props> = (args) => (
     </Buttons>
 );
 
-export const Alignment = Template.bind({});
-
-Alignment.args = {
-    alignment: 'centered',
-};
-
 export const Addons = Template.bind({});
 
 Addons.args = {
     hasAddons: true,
+};
+
+export const Alignment = Template.bind({});
+
+Alignment.args = {
+    alignment: 'centered',
 };

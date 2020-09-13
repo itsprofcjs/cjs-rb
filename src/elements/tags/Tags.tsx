@@ -1,8 +1,8 @@
-import React, { HTMLAttributes } from 'react';
+import React, { ClassAttributes, HTMLAttributes } from 'react';
 
-import { TagsConfig, getTagsClass } from './helpers/tagsClass';
+import { getTagsClass, TagsConfig } from './helpers/tagsClass';
 
-export interface Props extends TagsConfig, HTMLAttributes<Element> {}
+export interface Props extends ClassAttributes<HTMLElement>, HTMLAttributes<Element>, TagsConfig {}
 
 export const Tags = ({ children, ...props }: Props) => {
     const { className, restPayload } = getTagsClass({ ...props });

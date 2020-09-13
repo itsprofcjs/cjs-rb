@@ -1,55 +1,55 @@
 export type ColorClass =
-    | 'default'
-    | 'white'
-    | 'light'
-    | 'dark'
     | 'black'
-    | 'text'
-    | 'primary'
-    | 'link'
+    | 'danger'
+    | 'dark'
+    | 'default'
     | 'info'
+    | 'light'
+    | 'link'
+    | 'primary'
     | 'success'
+    | 'text'
     | 'warning'
-    | 'danger';
+    | 'white';
 
-export const getColorClass = (size: ColorClass, isLight: boolean = false) => {
+export const getColorClass = (isLight: boolean = false, size: ColorClass) => {
     let className = '';
 
     const lightClass = 'is-light';
 
     switch (size) {
-        case 'white':
-            className += 'is-white';
+        case 'black':
+            className += 'is-black';
             break;
-        case 'light':
-            className += 'is-light';
+        case 'danger':
+            className += 'is-danger';
             break;
         case 'dark':
             className += 'is-dark';
             break;
-        case 'black':
-            className += 'is-black';
+        case 'info':
+            className += 'is-info';
             break;
-        case 'text':
-            className += 'is-text';
-            break;
-        case 'primary':
-            className += 'is-primary';
+        case 'light':
+            className += 'is-light';
             break;
         case 'link':
             className += 'is-link';
             break;
-        case 'info':
-            className += 'is-info';
+        case 'primary':
+            className += 'is-primary';
             break;
         case 'success':
             className += 'is-success';
             break;
+        case 'text':
+            className += 'is-text';
+            break;
         case 'warning':
             className += 'is-warning';
             break;
-        case 'danger':
-            className += 'is-danger';
+        case 'white':
+            className += 'is-white';
             break;
 
         default:

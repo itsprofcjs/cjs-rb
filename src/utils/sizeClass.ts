@@ -1,6 +1,6 @@
-export type SizeClass = 'default' | 'small' | 'normal' | 'medium' | 'large';
+export type SizeClass = 'default' | 'large' | 'medium' | 'normal' | 'small';
 
-export const getSizeClass = (size: SizeClass, isContainer: boolean = false) => {
+export const getSizeClass = (isContainer: boolean = false, size: SizeClass) => {
     let className = '';
 
     let modifier = 'is';
@@ -10,17 +10,17 @@ export const getSizeClass = (size: SizeClass, isContainer: boolean = false) => {
     }
 
     switch (size) {
-        case 'small':
-            className += modifier + '-small';
-            break;
-        case 'normal':
-            className += modifier + '-normal';
+        case 'large':
+            className += modifier + '-large';
             break;
         case 'medium':
             className += modifier + '-medium';
             break;
-        case 'large':
-            className += modifier + '-large';
+        case 'normal':
+            className += modifier + '-normal';
+            break;
+        case 'small':
+            className += modifier + '-small';
             break;
 
         default:

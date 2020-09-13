@@ -1,4 +1,4 @@
-import { SizeClass, getSizeClass } from '../../../utils/sizeClass';
+import { getSizeClass, SizeClass } from '../../../utils/sizeClass';
 
 /* 
 Tags : These are container class for tag elements

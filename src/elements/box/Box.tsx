@@ -1,10 +1,8 @@
-import React, { ReactNode, CSSProperties } from 'react';
+import React, { ClassAttributes, CSSProperties, HTMLAttributes } from 'react';
 
-export interface Props {
+export interface Props extends ClassAttributes<HTMLElement>, HTMLAttributes<HTMLElement> {
     containerClass?: string;
     containerStyle?: CSSProperties;
-
-    children: ReactNode;
 }
 
 // The box element is simply a container with a shadow, a border, a radius, and some padding.

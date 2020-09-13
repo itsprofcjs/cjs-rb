@@ -1,4 +1,4 @@
-export type AlignmentClass = 'default' | 'left' | 'centered' | 'right';
+export type AlignmentClass = 'centered' | 'default' | 'left' | 'right';
 
 export const getAlignmentClass = (size: AlignmentClass) => {
     let className = '';

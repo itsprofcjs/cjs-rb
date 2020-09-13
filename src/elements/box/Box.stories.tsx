@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Meta, Story } from '@storybook/react/types-6-0';
 
-import { Box, Props } from './Box';
+import { Props, Box } from './Box';
 
 export default {
-    title: 'Box',
     component: Box,
+    title: 'Box',
 } as Meta;
 
 const Template: Story<Props> = (args) => <Box {...args}> Its rolling </Box>;
