@@ -7,14 +7,14 @@ export interface Props
         ButtonConfig,
         ClassAttributes<HTMLAnchorElement> {}
 
-export const AnchorButton = ({ children, isDelete, ...props }: Props) => {
+export const AnchorButton = ({ children, isDelete, ref, ...props }: Props) => {
     const { className, restPayload } = getButtonClass({ isDelete, ...props });
 
     if (isDelete) {
-        return <a className={className} />;
+        return <a className={className} ref={ref} />;
     } else {
         return (
-            <a className={className} {...restPayload}>
+            <a className={className} ref={ref} {...restPayload}>
                 {children}
             </a>
         );

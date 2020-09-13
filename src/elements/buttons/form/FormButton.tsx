@@ -6,8 +6,8 @@ export interface Props extends ButtonConfig, ClassAttributes<HTMLInputElement>, 
     type?: 'button' | 'reset' | 'submit';
 }
 
-export const FormButton = ({ type = 'button', ...props }: Props) => {
+export const FormButton = ({ ref, type = 'button', ...props }: Props) => {
     const { className, restPayload } = getButtonClass({ ...props });
 
-    return <input className={className} type={type} {...restPayload} />;
+    return <input className={className} ref={ref} type={type} {...restPayload} />;
 };

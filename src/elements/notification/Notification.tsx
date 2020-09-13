@@ -36,6 +36,7 @@ export const Notification = ({
     isLight = false,
     onClose = () => {},
     kind = 'default',
+    ref,
 }: Props) => {
     let clsName = 'notification ';
 
@@ -71,7 +72,7 @@ export const Notification = ({
     }, [autoDismiss, dismissAfter]);
 
     return isVisible ? (
-        <section className={clsName}>
+        <section ref={ref} className={clsName}>
             {!hideClose && <Button isDelete onClick={onNotificationClose} />}
             {children}
         </section>

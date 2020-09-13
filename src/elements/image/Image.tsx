@@ -81,6 +81,7 @@ export const Image = ({
     isRounded = false,
     isSquare = false,
     ratio = 'default',
+    ref,
     src = '',
     ...imageProps
 }: Props) => {
@@ -109,7 +110,7 @@ export const Image = ({
     imageClass = imageClass.trim();
 
     return (
-        <figure className={figureClass}>
+        <figure ref={ref} className={figureClass}>
             <img alt="" className={imageClass} src={src} {...imageProps} />
             {caption && <figcaption className={captionClass}>{caption}</figcaption>}
         </figure>

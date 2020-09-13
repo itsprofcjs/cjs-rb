@@ -6,9 +6,9 @@ export interface Props extends ClassAttributes<HTMLElement>, HTMLAttributes<HTML
 }
 
 // The box element is simply a container with a shadow, a border, a radius, and some padding.
-export const Box = ({ containerClass = '', containerStyle = {}, children }: Props) => {
+export const Box = ({ containerClass = '', containerStyle = {}, children, ref }: Props) => {
     return (
-        <section className={`box ${containerClass}`} style={containerStyle}>
+        <section className={`box ${containerClass}`} ref={ref} style={containerStyle}>
             {children}
         </section>
     );
