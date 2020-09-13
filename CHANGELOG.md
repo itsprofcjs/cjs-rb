@@ -1,3 +1,10 @@
+## [1.6.1-beta.2](https://github.com/itsprofcjs/cjs-rb/compare/v1.6.1-beta.1...v1.6.1-beta.2) (2020-09-13)
+
+
+### Bug Fixes
+
+* **ref:** ref fix for message and modal components ([e46bad0](https://github.com/itsprofcjs/cjs-rb/commit/e46bad099f2d849a0e698c73bb752780b3731036))
+
 ## [1.6.1-beta.1](https://github.com/itsprofcjs/cjs-rb/compare/v1.6.0...v1.6.1-beta.1) (2020-09-13)
 
 
