@@ -1,3 +1,5 @@
+![Build](https://github.com/itsprofcjs/cjs-rb/workflows/Production%20CI/CD/badge.svg)
+
 # Modern React UI components using bulma
 
 See [docs](https://itsprofcjs.github.io/cjs-rb/) to know more
