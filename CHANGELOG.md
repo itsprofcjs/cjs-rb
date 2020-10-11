@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/itsprofcjs/cjs-rb/compare/v1.6.1...v1.6.2) (2020-10-11)
+
+
+### Bug Fixes
+
+* **bulma:** update bulma to 0.9.1 ([624ebe3](https://github.com/itsprofcjs/cjs-rb/commit/624ebe37692a5e6a326ad7e4438a5378fe13e313))
+
 ## [1.6.1](https://github.com/itsprofcjs/cjs-rb/compare/v1.6.0...v1.6.1) (2020-09-13)
 
 
