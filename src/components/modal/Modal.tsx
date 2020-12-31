@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, useState, useCallback, Ref, forwardRef } from 'react';
+import { HTMLAttributes, useState, useCallback, Ref, forwardRef } from 'react';
 
 import { Button } from '../../elements/buttons/button/Button';
 

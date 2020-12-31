@@ -1,4 +1,4 @@
-import React, { AnchorHTMLAttributes, forwardRef, Ref } from 'react';
+import { AnchorHTMLAttributes, forwardRef, Ref } from 'react';
 
 import { getButtonClass, ButtonConfig } from '../helpers/buttonClass';
 

@@ -1,4 +1,4 @@
-import React, { CSSProperties, forwardRef, HTMLAttributes, Ref } from 'react';
+import { CSSProperties, forwardRef, HTMLAttributes, Ref } from 'react';
 
 export interface Props extends HTMLAttributes<HTMLElement> {
     containerClass?: string;

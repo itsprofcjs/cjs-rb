@@ -1,4 +1,4 @@
-import React, { forwardRef, HTMLAttributes, ReactNode, Ref, useCallback, useState } from 'react';
+import { forwardRef, HTMLAttributes, ReactNode, Ref, useCallback, useState } from 'react';
 
 import { getColorClass, ColorClass } from '../../utils/colorClass';
 import { getSizeClass, SizeClass } from '../../utils/sizeClass';
