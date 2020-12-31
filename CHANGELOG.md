@@ -1,3 +1,16 @@
+# [2.0.0](https://github.com/itsprofcjs/cjs-rb/compare/v1.6.2...v2.0.0) (2020-12-31)
+
+
+### Features
+
+* **react:** react v17 ([8549c8b](https://github.com/itsprofcjs/cjs-rb/commit/8549c8b69c69d2628de76bc5b7231ac502240908))
+
+
+### BREAKING CHANGES
+
+* **react:** nothing should break from previous version but this
+is for keeping in sync with react v17
+
 ## [1.6.2](https://github.com/itsprofcjs/cjs-rb/compare/v1.6.1...v1.6.2) (2020-10-11)
 
 
