@@ -3,14 +3,16 @@
 name: Production CI/CD
 
 # Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+# events but only for the main/production branch
+
 on:
     push:
         branches:
-            - master
+            - main
+
     pull_request:
         branches:
-            - master
+            - main
 
 env:
     GIT_AUTHOR_NAME: ${{ secrets.GIT_AUTHOR_NAME }}

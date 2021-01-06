@@ -3,18 +3,18 @@
 name: Staging - CI/CD
 
 # Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+# events but only for the pre-release/staging branch
+
 on:
     push:
         branches:
             - beta
             - alpha
-            - next
+
     pull_request:
         branches:
             - beta
             - alpha
-            - next
 
 env:
     GIT_AUTHOR_NAME: ${{ secrets.GIT_AUTHOR_NAME }}

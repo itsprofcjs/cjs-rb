@@ -33,7 +33,7 @@
         "prepare": "rm -rf dist/ && npm run build && npm run build-sb",
         "sb": "start-storybook -p 6006",
         "start": "rollup -c",
-        "update": "ncu -u --timeout 1800000 && npm i"
+        "update": "ncu -u --timeout 1800000 && npm i --legacy-peer-deps"
     },
     "devDependencies": {
         "@babel/core": "7.12.10",
@@ -49,7 +49,7 @@
         "react": "17.0.1",
         "react-dom": "17.0.1",
         "react-is": "17.0.1",
-        "rollup": "2.35.1",
+        "rollup": "2.36.1",
         "rollup-plugin-delete": "2.0.0",
         "rollup-plugin-typescript2": "0.29.0",
         "semantic-release": "17.3.1",
