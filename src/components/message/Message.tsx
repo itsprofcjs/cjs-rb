@@ -33,7 +33,7 @@ export const MessageElement = (
 
     const [isVisible, setIsVisible] = useState(true);
 
-    const onMessageClose = useCallback((e) => {
+    const onMessageClose = useCallback((e: any) => {
         setIsVisible(false);
         onClose?.(e);
     }, []);

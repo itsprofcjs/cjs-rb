@@ -1,12 +1,4 @@
-import {
-    ClassAttributes,
-    forwardRef,
-    HTMLAttributes,
-    ReactNode,
-    Ref,
-    useCallback,
-    useState,
-} from 'react';
+import { ClassAttributes, forwardRef, HTMLAttributes, ReactNode, Ref, useCallback, useState } from 'react';
 
 import { Button } from '../../../elements/buttons/button/Button';
 
@@ -46,7 +38,7 @@ export const CardModalElement = (
 
     const [isVisible, setIsVisible] = useState(true);
 
-    const onCardModalClose = useCallback((e) => {
+    const onCardModalClose = useCallback((e: any) => {
         setIsVisible(false);
         onClose?.(e);
     }, []);

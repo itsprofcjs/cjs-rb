@@ -52,7 +52,7 @@ export const NotificationElement = (
 
     clsName = clsName.trim();
 
-    const onNotificationClose = useCallback((e) => {
+    const onNotificationClose = useCallback((e: any) => {
         setIsVisible(false);
         onClose?.(e);
     }, []);

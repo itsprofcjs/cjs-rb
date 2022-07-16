@@ -16,7 +16,7 @@ export const ModalElement = (
 
     const [isVisible, setIsVisible] = useState(true);
 
-    const onModalClose = useCallback((e) => {
+    const onModalClose = useCallback((e: any) => {
         setIsVisible(false);
         onClose?.(e);
     }, []);
