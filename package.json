@@ -36,7 +36,7 @@
         "update": "ncu -u --timeout 1800000 && npm i --legacy-peer-deps"
     },
     "devDependencies": {
-        "@babel/core": "7.18.6",
+        "@babel/core": "7.18.9",
         "@semantic-release/changelog": "6.0.1",
         "@semantic-release/git": "10.0.1",
         "@storybook/addon-actions": "6.5.9",
@@ -49,7 +49,7 @@
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "react-is": "18.2.0",
-        "rollup": "2.76.0",
+        "rollup": "2.77.0",
         "rollup-plugin-delete": "2.0.0",
         "rollup-plugin-typescript2": "0.32.1",
         "semantic-release": "19.0.3",
