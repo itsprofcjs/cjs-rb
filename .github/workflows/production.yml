@@ -62,9 +62,9 @@ jobs:
             - name: Installing dependencies via pnpm install
               run: pnpm install
 
-            - name: Semantic Release
+            - name: Release to Github
               id: semantic
-              uses: npx -p @semantic-release/changelog -p @semantic-release/exec -p @semantic-release/git semantic-release
+              run: npx -p @semantic-release/changelog -p @semantic-release/exec -p @semantic-release/git semantic-release
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

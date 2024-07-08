@@ -52,8 +52,8 @@ jobs:
               run: |
                   echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-            - uses: actions/cache@v4
-              name: Setup pnpm cache
+            - name: Setup pnpm cache
+              uses: actions/cache@v4
               with:
                   path: ${{ env.STORE_PATH }}
                   key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
@@ -64,9 +64,9 @@ jobs:
             - name: Installing dependencies via pnpm install
               run: pnpm install
 
-            - name: Semantic Release
+            - name: Release to Github
               id: semantic
-              uses: npx -p @semantic-release/changelog -p @semantic-release/exec -p @semantic-release/git semantic-release
+              run: npx -p @semantic-release/changelog -p @semantic-release/exec -p @semantic-release/git semantic-release
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
