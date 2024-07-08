@@ -1,13 +1,20 @@
 {
-    "name": "cjs-rb",
+    "name": "@itsprofcjs/cjs-rb",
     "version": "2.0.0",
     "description": "Modern React UI components using bulma",
-    "main": "dist/index.js",
-    "module": "dist/index.esm.js",
-    "files": [
-        "dist"
-    ],
-    "typings": "dist/index.d.ts",
+    "scripts": {
+        "build": "turbo run build",
+        "dev": "turbo run dev",
+        "lint": "turbo run lint",
+        "format": "prettier --write \"**/*.{ts,tsx,md,css,scss,json}\"",
+        "update": "ncu -u && pnpm i"
+    },
+    "devDependencies": {
+        "eslint": "^8.57.0",
+        "prettier": "^3.3.2",
+        "turbo": "^2.0.6"
+    },
+    "packageManager": "pnpm@9.5.0",
     "keywords": [
         "react",
         "bulma",
@@ -26,38 +33,5 @@
     "license": "ISC",
     "publishConfig": {
         "registry": "https://registry.npmjs.org/"
-    },
-    "scripts": {
-        "build": "rollup -c",
-        "build-sb": "build-storybook -o docs/",
-        "prepare": "rm -rf dist/ && npm run build && npm run build-sb",
-        "sb": "start-storybook -p 6006",
-        "start": "rollup -c",
-        "update": "ncu -u --timeout 1800000 && npm i --legacy-peer-deps"
-    },
-    "devDependencies": {
-        "@babel/core": "7.18.9",
-        "@semantic-release/changelog": "6.0.1",
-        "@semantic-release/git": "10.0.1",
-        "@storybook/addon-actions": "6.5.9",
-        "@storybook/addon-essentials": "6.5.9",
-        "@storybook/addon-links": "6.5.9",
-        "@storybook/react": "6.5.9",
-        "@types/react": "18.0.15",
-        "@types/react-dom": "18.0.6",
-        "babel-loader": "8.2.5",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "react-is": "18.2.0",
-        "rollup": "2.77.0",
-        "rollup-plugin-delete": "2.0.0",
-        "rollup-plugin-typescript2": "0.32.1",
-        "semantic-release": "19.0.3",
-        "typescript": "4.7.4"
-    },
-    "peerDependencies": {
-        "bulma": "0.9.3",
-        "react": "18.2.0",
-        "react-dom": "18.2.0"
     }
 }

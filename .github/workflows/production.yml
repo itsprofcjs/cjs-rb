@@ -31,21 +31,40 @@ jobs:
         # Steps represent a sequence of tasks that will be executed as part of the job
         steps:
             # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-            - uses: actions/checkout@v2
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Setup pnpm
+              uses: pnpm/action-setup@v4
+              with:
+                  version: 9
 
             - name: Setup Node
-              uses: actions/setup-node@v1
+              uses: actions/setup-node@v4
               with:
-                  node-version: '14'
+                  node-version: '22'
+                  cache: 'pnpm'
+
+            - name: Get pnpm store directory
+              shell: bash
+              run: |
+                  echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+            - uses: actions/cache@v4
+              name: Setup pnpm cache
+              with:
+                  path: ${{ env.STORE_PATH }}
+                  key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+                  restore-keys: |
+                      ${{ runner.os }}-pnpm-store-
 
             # Runs a single command using the runners shell
-            - name: Installing dependencies via npm install
-              run: npm install
+            - name: Installing dependencies via pnpm install
+              run: pnpm install
 
             - name: Semantic Release
               id: semantic
-              uses: codfish/semantic-release-action@master
-              # if: github.event_name == 'push'
+              uses: npx -p @semantic-release/changelog -p @semantic-release/exec -p @semantic-release/git semantic-release
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
