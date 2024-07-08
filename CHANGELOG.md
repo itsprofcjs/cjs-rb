@@ -1,3 +1,25 @@
+# [3.0.0-beta.1](https://github.com/itsprofcjs/cjs-rb/compare/v2.0.0...v3.0.0-beta.1) (2024-07-08)
+
+
+### Bug Fixes
+
+* github workflow config error ([a257959](https://github.com/itsprofcjs/cjs-rb/commit/a2579595e4210c42cb5e08a844e1e4e70f8c6e83))
+* remove pnpm version from github workflows, ([68511a8](https://github.com/itsprofcjs/cjs-rb/commit/68511a8c33e0e38529d437e09e0a940a02e7e534))
+
+
+### Features
+
+* bulma v1 integration ([a4c66c8](https://github.com/itsprofcjs/cjs-rb/commit/a4c66c8fb99632224a29b5f0d3e8dee3087e2e56))
+
+
+### BREAKING CHANGES
+
+* v1 intrgration with tooling
+changes with lots of internal changes
+
+Moving to custom docs, moving away from storybook
+intrgration for now
+
 # [2.0.0](https://github.com/itsprofcjs/cjs-rb/compare/v1.6.2...v2.0.0) (2020-12-31)
 
 ### Features
